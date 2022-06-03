@@ -1,0 +1,5 @@
+.hang {
+    display: flex;
+    height: 380px;
+    justify-content:center
+}

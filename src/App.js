@@ -3,22 +3,19 @@ import React, { useEffect, useState } from 'react';
 import Keyboard from './components/Keyboard'
 import { Palavras } from './components/Palavras';
 import { Animais } from './components/Data/words';
+import Draw from './components/Desenho';
 
 function App() {
 
 
   const [tabuleiro, setTabuleiro] = useState([[]]);
   const [wordSelector, setWordSelector] = useState();
-  const [p1, setP1] = useState([]);
-  const [tentative, setTentative] = useState(0);
-  const [certas, setCertas] = useState([]);
-  const [erradas, setErradas] = useState([]);
-  const [quase, setQuase] = useState([]);
   const [win, setWin] = useState(false);
   const [youLose, setYouLose] = useState(false);
   const [dicas, setDicas] = useState(false);
   const [active, setActive] = useState([]);
-  const [tmpPalavra , setPalavra] = useState('');
+  const [lives, setLives] = useState(-1);
+
 
   useEffect(()=>{
     let num=Math.floor(Math.random() * (Animais.length));
@@ -30,6 +27,12 @@ function App() {
     }
   
   ,[])
+  useEffect(()=>{
+    if(lives===6){
+      setYouLose(true);
+    }
+  },[lives])
+
 
   function criarListaLetras(quantidade, tmpLetras){
     
@@ -49,6 +52,7 @@ function App() {
     let tmpTabuleiro = [...tabuleiro]
     let tmpActive = [...active]
     let tmpLetra = wordSelector.includes( n ) ;
+    let tmpLives = lives;
     //let tmpP1 = [...p1]; 
     console.log(tmpLetra)
     if (tmpLetra){
@@ -58,11 +62,16 @@ function App() {
           tmpTabuleiro[i].valor=n;
         }
       }
+    }else {
+      tmpLives++
+
     }
+    setLives(tmpLives)
     corTeclado(n, tmpActive)
     //setP1(tmpP1);
     setActive(tmpActive);
     setTabuleiro(tmpTabuleiro);
+    console.log(lives,youLose);
   }
   function corTeclado(letra,tmpActive){
 
@@ -154,7 +163,8 @@ function App() {
     <div>
       {wordSelector}
       <Palavras tabuleiro={tabuleiro}/>
-      <Keyboard clicou={clicou} active={active}/>
+      <Draw lives={lives}/>
+      <Keyboard clicou={clicou} active={active} dicas={setDicas}/>
     </div>
   );
 }

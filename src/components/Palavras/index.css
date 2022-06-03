@@ -2,7 +2,7 @@
   .palavras{
     display: flex;
     flex-direction: row;
-
+    justify-content:center;
   }
   .letras{
     box-sizing: border-box;

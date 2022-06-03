@@ -2,7 +2,7 @@ import './index.css';
 export const Palavras = (Props) => {
 
         return(
-            <div className="cont">  
+            <div className="palavras">  
                 
                     <div  className={`palavras `}>
                             {
