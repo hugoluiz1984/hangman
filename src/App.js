@@ -4,18 +4,21 @@ import Keyboard from './components/Keyboard'
 import { Palavras } from './components/Palavras';
 import { Animais } from './components/Data/words';
 import Draw from './components/Desenho';
+import GameOver from "./components/GameOver"
+import GameWin from "./components/GameWin"
+import GameDicas from "./components/GameDicas"
 
 function App() {
 
 
-  const [tabuleiro, setTabuleiro] = useState([[]]);
-  const [wordSelector, setWordSelector] = useState();
+  const [tabuleiro, setTabuleiro] = useState([]);
+  const [wordSelector, setWordSelector] = useState([]);
   const [win, setWin] = useState(false);
   const [youLose, setYouLose] = useState(false);
   const [dicas, setDicas] = useState(false);
   const [active, setActive] = useState([]);
   const [lives, setLives] = useState(-1);
-
+  const [qtdLetras, setQtdLetras] = useState(0);
 
   useEffect(()=>{
     let num=Math.floor(Math.random() * (Animais.length));
@@ -38,10 +41,7 @@ function App() {
     
       for (let i = 0; i < quantidade; i++) {
         tmpLetras.push(
-          {
-            index: i,
-            valor:"",
-        },
+          " "
         )
     }
     setTabuleiro(tmpLetras);
@@ -53,19 +53,27 @@ function App() {
     let tmpActive = [...active]
     let tmpLetra = wordSelector.includes( n ) ;
     let tmpLives = lives;
-    //let tmpP1 = [...p1]; 
-    console.log(tmpLetra)
+    let tmpQdLetras = qtdLetras;
+     console.log(tmpLetra)
     if (tmpLetra){
       for (let i = 0; i < wordSelector.length; i++){
         if (n === wordSelector[i] )
         {
-          tmpTabuleiro[i].valor=n;
+          tmpTabuleiro[i]=n;
+          tmpQdLetras++
         }
       }
     }else {
       tmpLives++
-
     }
+    console.log(wordSelector.length,tmpQdLetras)
+    setQtdLetras(tmpQdLetras)
+    if (tmpQdLetras===wordSelector.length) {
+      console.log('Venceu')
+      setTimeout(() => {
+        setWin(true);
+      }, 1000);}
+
     setLives(tmpLives)
     corTeclado(n, tmpActive)
     //setP1(tmpP1);
@@ -159,12 +167,37 @@ function App() {
     }
   }
 
+  function func_dicas () {
+    setDicas(!dicas)
+  }
+
+
+
+  function restart () {
+
+    setWin(false);
+    setYouLose(false);
+    let num=Math.floor(Math.random() * (Animais.length));
+    setWordSelector(Animais[num]);
+    let tmpLetras =  []
+    let qtdLetras = Animais[num].length
+    criarListaLetras(qtdLetras, tmpLetras)
+    setActive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
+    console.log(tabuleiro)
+  }
+
   return (
-    <div>
+    <div className='container'>
       {wordSelector}
       <Palavras tabuleiro={tabuleiro}/>
       <Draw lives={lives}/>
-      <Keyboard clicou={clicou} active={active} dicas={setDicas}/>
+      <Keyboard restart={restart} clicou={clicou} active={active} func_dicas={func_dicas}/>
+      <GameWin show={win} handleRestart={restart}></GameWin>
+      <GameOver show={youLose} handleRestart={restart} palavra={wordSelector}> </GameOver>
+      <GameDicas show={dicas} handleRestart={func_dicas}></GameDicas>
+      <div className="footer">
+       Feito por Hugo Gama
+      </div>
     </div>
   );
 }

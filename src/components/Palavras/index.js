@@ -10,7 +10,7 @@ export const Palavras = (Props) => {
                                     return (
                                         <div className={`letras`} 
                                         key= {numeroColuna}>
-                                           {Props.tabuleiro[numeroColuna].valor}
+                                           {Props.tabuleiro[numeroColuna]}
                                         </div>
                                     )
                                 })
