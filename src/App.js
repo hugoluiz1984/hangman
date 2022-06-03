@@ -188,10 +188,13 @@ function App() {
 
   return (
     <div className='container'>
-      {wordSelector}
+      <div className='logo'>
+        <h1>Jogo da Forca</h1>
+        
+      </div>
       <Palavras tabuleiro={tabuleiro}/>
       <Draw lives={lives}/>
-      <Keyboard restart={restart} clicou={clicou} active={active} func_dicas={func_dicas}/>
+      <Keyboard restart={restart} clicou={clicou} active={active} />
       <GameWin show={win} handleRestart={restart}></GameWin>
       <GameOver show={youLose} handleRestart={restart} palavra={wordSelector}> </GameOver>
       <GameDicas show={dicas} handleRestart={func_dicas}></GameDicas>

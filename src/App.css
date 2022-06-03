@@ -19,6 +19,18 @@ button{
   margin: auto;
   align-items: center;
 }
+h1{
+  font-family:'Anton',Arial;
+  font-size: 30px;
+  margin:0;
+  text-align: center;
+}
+h6{
+  font-family:'Anton',Arial;
+  font-size: 15px;
+  margin:0;
+  text-align: center;
+}
 
 .footer{
   display:flex;
