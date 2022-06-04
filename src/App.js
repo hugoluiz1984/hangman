@@ -177,6 +177,7 @@ function App() {
 
     setWin(false);
     setYouLose(false);
+    setLives(-1);
     let num=Math.floor(Math.random() * (Animais.length));
     setWordSelector(Animais[num]);
     let tmpLetras =  []

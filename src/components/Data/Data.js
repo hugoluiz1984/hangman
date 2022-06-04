@@ -4,7 +4,6 @@ class Data {
 
     constructor(text){
         
-        this.id = Item.lastId++;
         this.name = text;
         this.wordsCount = 0;
         
