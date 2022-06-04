@@ -2,7 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import Keyboard from './components/Keyboard'
 import { Palavras } from './components/Palavras';
-import { Animais } from './components/Data/words';
+import { AnimaisPalavras } from './components/Data/words';
 import Draw from './components/Desenho';
 import GameOver from "./components/GameOver"
 import GameWin from "./components/GameWin"
@@ -21,10 +21,11 @@ function App() {
   const [qtdLetras, setQtdLetras] = useState(0);
 
   useEffect(()=>{
-    let num=Math.floor(Math.random() * (Animais.length));
-    setWordSelector(Animais[num]);
+    let num=Math.floor(Math.random() * (AnimaisPalavras.length));
+    let array =  AnimaisPalavras[num].split('')
+    setWordSelector(array);
     let tmpLetras = [];
-    let qtdLetras = Animais[num].length;
+    let qtdLetras = array.length;
     criarListaLetras(qtdLetras, tmpLetras);
     setActive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
     }
@@ -178,13 +179,14 @@ function App() {
     setWin(false);
     setYouLose(false);
     setLives(-1);
-    let num=Math.floor(Math.random() * (Animais.length));
-    setWordSelector(Animais[num]);
-    let tmpLetras =  []
-    let qtdLetras = Animais[num].length
-    criarListaLetras(qtdLetras, tmpLetras)
+    let num=Math.floor(Math.random() * (AnimaisPalavras.length));
+    let array =  AnimaisPalavras[num].split('')
+    setWordSelector(array);
+    let tmpLetras = [];
+    let qtdLetras = array.length;
+    criarListaLetras(qtdLetras, tmpLetras);
     setActive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
-    console.log(tabuleiro)
+    
   }
 
   return (

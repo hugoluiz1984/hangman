@@ -52,17 +52,33 @@ export const Animais = [
     ['G','A','L','I','N','H','A'],
     ['G','A','N','S','O'],
     ['G','A','F','A','N','H','O','T','O'],
- 
-
-
-
-
-
-
-
 
 ];
+export const AnimaisPalavras = [
+    'ABELHA','ARANHA','ARARA','AGUIA','ABUTRE','ANTA','ASNO','AVESTRUZ','ALCE',
+    'BALEIA','BURRO','BORBOLETA','BARATA','BOTO','BODE','BUFALO', 'BOI','BESOURO',
+    'CABRA','CABRITO','CACATUA','CALANGO','CACHORRO','CAMELO','CAPIVARA', 'CANGURU', 'CARPA', 'CAVALO','CEGONHA','CENTOPEIA', 'CHACAL', 'CIGARRA', 'CISNE', 'COALA', 'COBRA', 'CONDOR', 'CROCODILO', 'CUCO', 'CUTIA',
+    'DONINHA',
+    'ELEFANTE','ESQUILO','EMA',
+    'FLAMINGO', 'FORMIGA', 'FOCA', 'FUINHA',
+    'GATO, GAIVOTA', 'GATO', 'GALINHA', 'GANSO', 'GAFANHOTO', 'GIRAFA', 'GOLFINHO', 'GRALHA', 'GORILA', 'GRILO',
+    'HIENA',
+    'IGUANA','IAQUE',
+    'JACARE','JUMENTO','JEGUE','JIBOIA','JOANINHA','JARARACA',
+    'LEOPARDO','LOBO','LAGARTO','LACRAIA','LEBRE',
+    'MACACO', 'MICO', 'MOSCA', 'MOSQUITO', 'MINHOCA', 'MULA', 'MARIMBONDO','MARIPOSA','MORCEGO',
+    'OVELHA','ORNITORRINCO','OSTRA',
+    'PAPAGAIO','PATO','PEIXE','PANTERA','PULGA','PORCO','PINTO','POLVO','POMBO','PUMA','PANDA','PELICANO','PACA','PERERECA','PARDAL','PERU','PIOLHO',
+    'QUATI',
+    'RATO', 'RAPOSA', 'RINOCERONTE', 'RENA', 
+    'SAPO', 'SIRI', 'SERPENTE', 'SARDINHA',
+    'VACA','VESPA','VEADO',
+    'ZEBRA', 'ZEBU'
 
+
+
+
+ ]
 export const vazias = [
     {
         index: 0,
