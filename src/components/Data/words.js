@@ -61,7 +61,7 @@ export const AnimaisPalavras = [
     'DONINHA',
     'ELEFANTE','ESQUILO','EMA',
     'FLAMINGO', 'FORMIGA', 'FOCA', 'FUINHA',
-    'GATO, GAIVOTA', 'GATO', 'GALINHA', 'GANSO', 'GAFANHOTO', 'GIRAFA', 'GOLFINHO', 'GRALHA', 'GORILA', 'GRILO',
+    'GATO', 'GAIVOTA', 'GATO', 'GALINHA', 'GANSO', 'GAFANHOTO', 'GIRAFA', 'GOLFINHO', 'GRALHA', 'GORILA', 'GRILO',
     'HIENA',
     'IGUANA','IAQUE',
     'JACARE','JUMENTO','JEGUE','JIBOIA','JOANINHA','JARARACA',
@@ -74,10 +74,6 @@ export const AnimaisPalavras = [
     'SAPO', 'SIRI', 'SERPENTE', 'SARDINHA',
     'VACA','VESPA','VEADO',
     'ZEBRA', 'ZEBU'
-
-
-
-
  ]
 export const vazias = [
     {

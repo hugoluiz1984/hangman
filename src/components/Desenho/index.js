@@ -11,8 +11,8 @@ import step6 from "../images/6.jpg";
 function Draw(Props) {
    const [imagem, setImage] = useState(step0)
    useEffect(() => {
-
-    if (Props.lives === 1){
+    if (Props.lives === 0){setImage(step0)}
+    else if (Props.lives === 1){
         setImage(step1)
     }else if (Props.lives === 2){
         setImage(step2)

@@ -179,12 +179,13 @@ function App() {
     setWin(false);
     setYouLose(false);
     setLives(-1);
+    setQtdLetras(0)
     let num=Math.floor(Math.random() * (AnimaisPalavras.length));
     let array =  AnimaisPalavras[num].split('')
     setWordSelector(array);
     let tmpLetras = [];
-    let qtdLetras = array.length;
-    criarListaLetras(qtdLetras, tmpLetras);
+    let tpmQtdLetras = array.length;
+    criarListaLetras(tpmQtdLetras, tmpLetras);
     setActive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
     
   }
